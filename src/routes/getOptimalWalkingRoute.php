@@ -22,28 +22,28 @@ $app->post('/api/MapboxDirection/getOptimalWalking', function ($request, $respon
 
     $params['access_token'] = $postData['args']['accessToken'];
 
-    if (isset($postData['args']['alternatives'])) {
+    if (isset($postData['args']['alternatives']) && strlen($postData['args']['alternatives']) > 0) {
         $params['alternatives'] = $postData['args']['alternatives'];
     }
-    if (isset($postData['args']['geometries'])) {
+    if (isset($postData['args']['geometries']) && strlen($postData['args']['alternatives']) > 0) {
         $params['geometries'] = $postData['args']['geometries'];
     }
-    if (isset($postData['args']['overview'])) {
+    if (isset($postData['args']['overview']) && strlen($postData['args']['alternatives']) > 0) {
         $params['overview'] = $postData['args']['overview'];
     }
-    if (isset($postData['args']['radiuses'])) {
+    if (isset($postData['args']['radiuses']) && strlen($postData['args']['alternatives']) > 0) {
         $params['radiuses'] = $postData['args']['radiuses'];
     }
-    if (isset($postData['args']['steps'])) {
+    if (isset($postData['args']['steps']) && strlen($postData['args']['alternatives']) > 0) {
         $params['steps'] = $postData['args']['steps'];
     }
-    if (isset($postData['args']['continueStraight'])) {
+    if (isset($postData['args']['continueStraight']) && strlen($postData['args']['alternatives']) > 0) {
         $params['continue_straight'] = $postData['args']['continueStraight'];
     }
-    if (isset($postData['args']['bearings'])) {
+    if (isset($postData['args']['bearings']) && strlen($postData['args']['alternatives']) > 0) {
         $params['bearings'] = $postData['args']['bearings'];
     }
-    if (isset($postData['args']['annotations'])) {
+    if (isset($postData['args']['annotations']) && strlen($postData['args']['alternatives']) > 0 ) {
         $params['annotations'] = $postData['args']['annotations'];
     }
 
