@@ -75,14 +75,16 @@ Performs Optical Character Recognition. It detects and extracts text within an i
 #### Request
 /api/MapboxDirection/getOptimalDrivingRoute method POST
 ```code
-[
-    'accessToken' => 'Your-accessToken-here',
-    'coordinates' => [
-        ['lng' => '-122.42', 'lat' => '37.78'],
-        ['lng' => '-77.03', 'lat' => '38.91'],
-    ],
-    ... 
-]
+{
+	"accessToken": "Your-accessToken-here",
+	"coordinates": [{
+		"lng": "-122.42",
+		"lat": "37.78"
+	}, {
+		"lng": "-77.03",
+		"lat": "38.91"
+	}]
+}
 ```
 #### Response
 ```code
