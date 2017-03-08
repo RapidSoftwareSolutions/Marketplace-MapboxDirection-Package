@@ -16,7 +16,7 @@ $app->post('/api/MapboxDirection/getOptimalWalking', function ($request, $respon
     $url = $settings['apiUrl'] . "/mapbox/walking/";
     $coordinateArray = [];
     foreach ($postData['args']['coordinates'] as $coordinate) {
-        $coordinateArray[] = $coordinate['long'] . ',' . $coordinate['lat'];
+        $coordinateArray[] = $coordinate['lng'] . ',' . $coordinate['lat'];
     }
     $url .= implode(';', $coordinateArray);
 
