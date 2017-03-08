@@ -2,9 +2,9 @@
   "package": "MapboxDirection",
   "tagline": "MapboxDirection API",
   "description": "Make maps, direction, geocoding, transit",
-  "image": "",
-  "repo": "",
-  "keywords": [],
+  "image": "https://logo.clearbit.com/mapbox.com",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-MapboxDirection-Package",
+  "keywords": ["map","direction","route", "area", "coordinates"],
   "accounts": {
     "domain": "mapbox.com",
     "credentials": [
