@@ -14,12 +14,12 @@ For automotive routing. This profile shows the fastest routes by preferring high
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
 | coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
-| alternatives    | String     | Whether to return alternative routes. Can be  true or false (default)
+| alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
-| steps           | String     | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
-| continueStraight| String     | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
+| steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
+| continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
 | bearings        | String     | Used to filter the road segment the waypoint will be placed on by direction and dictates the angle of approach. This option should always be used in conjunction with the radiuses parameter. The parameter takes two values per waypoint: the first is an angle clockwise from true north between 0 and 360. The second is the range of degrees the angle can deviate by. We recommend a value of 45° or 90° for the range, as bearing measurements tend to be inaccurate. This is useful for making sure we reroute vehicles on new routes that continue traveling in their current direction. A request that does this would provide bearing and radius values for the first waypoint and leave the remaining values empty. If provided, the list of bearings must be the same length as the list of waypoints, but you can skip a coordinate and show its position with the  ; separator.
 | annotations     | String     | Whether or not to return additional metadata along the route. Can be one or all of 'duration' or 'distance', each separated by ','.
 
@@ -30,12 +30,12 @@ Detects broad sets of categories within an image, ranging from modes of transpor
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
 | coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
-| alternatives    | String     | Whether to return alternative routes. Can be  true or false (default)
+| alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
-| steps           | String     | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
-| continueStraight| String     | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
+| steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
+| continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
 | bearings        | String     | Used to filter the road segment the waypoint will be placed on by direction and dictates the angle of approach. This option should always be used in conjunction with the radiuses parameter. The parameter takes two values per waypoint: the first is an angle clockwise from true north between 0 and 360. The second is the range of degrees the angle can deviate by. We recommend a value of 45° or 90° for the range, as bearing measurements tend to be inaccurate. This is useful for making sure we reroute vehicles on new routes that continue traveling in their current direction. A request that does this would provide bearing and radius values for the first waypoint and leave the remaining values empty. If provided, the list of bearings must be the same length as the list of waypoints, but you can skip a coordinate and show its position with the  ; separator.
 | annotations     | String     | Whether or not to return additional metadata along the route. Can be one or all of 'duration' or 'distance', each separated by ','.
 
@@ -46,12 +46,12 @@ Detects popular natural and man-made structures within an image.
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
 | coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
-| alternatives    | String     | Whether to return alternative routes. Can be  true or false (default)
+| alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
-| steps           | String     | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
-| continueStraight| String     | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
+| steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
+| continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
 | bearings        | String     | Used to filter the road segment the waypoint will be placed on by direction and dictates the angle of approach. This option should always be used in conjunction with the radiuses parameter. The parameter takes two values per waypoint: the first is an angle clockwise from true north between 0 and 360. The second is the range of degrees the angle can deviate by. We recommend a value of 45° or 90° for the range, as bearing measurements tend to be inaccurate. This is useful for making sure we reroute vehicles on new routes that continue traveling in their current direction. A request that does this would provide bearing and radius values for the first waypoint and leave the remaining values empty. If provided, the list of bearings must be the same length as the list of waypoints, but you can skip a coordinate and show its position with the  ; separator.
 | annotations     | String     | Whether or not to return additional metadata along the route. Can be one or all of 'duration' or 'distance', each separated by ','.
 
@@ -62,18 +62,18 @@ Performs Optical Character Recognition. It detects and extracts text within an i
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
 | coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
-| alternatives    | String     | Whether to return alternative routes. Can be  true or false (default)
+| alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
-| steps           | String     | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
-| continueStraight| String     | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
+| steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
+| continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
 | bearings        | String     | Used to filter the road segment the waypoint will be placed on by direction and dictates the angle of approach. This option should always be used in conjunction with the radiuses parameter. The parameter takes two values per waypoint: the first is an angle clockwise from true north between 0 and 360. The second is the range of degrees the angle can deviate by. We recommend a value of 45° or 90° for the range, as bearing measurements tend to be inaccurate. This is useful for making sure we reroute vehicles on new routes that continue traveling in their current direction. A request that does this would provide bearing and radius values for the first waypoint and leave the remaining values empty. If provided, the list of bearings must be the same length as the list of waypoints, but you can skip a coordinate and show its position with the  ; separator.
 | annotations     | String     | Whether or not to return additional metadata along the route. Can be one or all of 'duration' or 'distance', each separated by ','.
 
 ## Examples
 #### Request
-/api/MapboxDirection/getOptimalDrivingRoute method POST
+MapboxDirection.getOptimalDriving
 ```code
 {
 	"accessToken": "Your-accessToken-here",

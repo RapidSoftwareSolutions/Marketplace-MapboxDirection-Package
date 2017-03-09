@@ -2,9 +2,9 @@
   "package": "MapboxDirection",
   "tagline": "MapboxDirection API",
   "description": "Make maps, direction, geocoding, transit",
-  "image": "",
-  "repo": "",
-  "keywords": [],
+  "image": "https://logo.clearbit.com/mapbox.com",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-MapboxDirection-Package",
+  "keywords": ["map","direction","route", "area", "coordinates"],
   "accounts": {
     "domain": "mapbox.com",
     "credentials": [
@@ -30,7 +30,7 @@
         },
         {
           "name": "alternatives",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return alternative routes. Can be  true or false (default)",
           "required": false
         },
@@ -54,13 +54,13 @@
         },
         {
           "name": "steps",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.",
           "required": false
         },
         {
           "name": "continueStraight",
-          "type": "String",
+          "type": "Boolean",
           "info": "Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.",
           "required": false
         },
@@ -106,7 +106,7 @@
         },
         {
           "name": "alternatives",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return alternative routes. Can be  true or false (default)",
           "required": false
         },
@@ -130,13 +130,13 @@
         },
         {
           "name": "steps",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.",
           "required": false
         },
         {
           "name": "continueStraight",
-          "type": "String",
+          "type": "Boolean",
           "info": "Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.",
           "required": false
         },
@@ -182,7 +182,7 @@
         },
         {
           "name": "alternatives",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return alternative routes. Can be  true or false (default)",
           "required": false
         },
@@ -206,13 +206,13 @@
         },
         {
           "name": "steps",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.",
           "required": false
         },
         {
           "name": "continueStraight",
-          "type": "String",
+          "type": "Boolean",
           "info": "Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.",
           "required": false
         },
@@ -258,7 +258,7 @@
         },
         {
           "name": "alternatives",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return alternative routes. Can be  true or false (default)",
           "required": false
         },
@@ -282,13 +282,13 @@
         },
         {
           "name": "steps",
-          "type": "String",
+          "type": "Boolean",
           "info": "Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.",
           "required": false
         },
         {
           "name": "continueStraight",
-          "type": "String",
+          "type": "Boolean",
           "info": "Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.",
           "required": false
         },
