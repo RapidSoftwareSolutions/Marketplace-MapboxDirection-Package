@@ -25,25 +25,25 @@ $app->post('/api/MapboxDirection/getOptimalDriving', function ($request, $respon
     if (isset($postData['args']['alternatives']) && strlen($postData['args']['alternatives']) > 0) {
         $params['alternatives'] = $postData['args']['alternatives'];
     }
-    if (isset($postData['args']['geometries']) && strlen($postData['args']['alternatives']) > 0) {
+    if (isset($postData['args']['geometries']) && strlen($postData['args']['geometries']) > 0) {
         $params['geometries'] = $postData['args']['geometries'];
     }
-    if (isset($postData['args']['overview']) && strlen($postData['args']['alternatives']) > 0) {
+    if (isset($postData['args']['overview']) && strlen($postData['args']['overview']) > 0) {
         $params['overview'] = $postData['args']['overview'];
     }
-    if (isset($postData['args']['radiuses']) && strlen($postData['args']['alternatives']) > 0) {
+    if (isset($postData['args']['radiuses']) && strlen($postData['args']['radiuses']) > 0) {
         $params['radiuses'] = $postData['args']['radiuses'];
     }
-    if (isset($postData['args']['steps']) && strlen($postData['args']['alternatives']) > 0) {
+    if (isset($postData['args']['steps']) && strlen($postData['args']['steps']) > 0) {
         $params['steps'] = $postData['args']['steps'];
     }
-    if (isset($postData['args']['continueStraight']) && strlen($postData['args']['alternatives']) > 0) {
+    if (isset($postData['args']['continueStraight']) && strlen($postData['args']['continueStraight']) > 0) {
         $params['continue_straight'] = $postData['args']['continueStraight'];
     }
-    if (isset($postData['args']['bearings']) && strlen($postData['args']['alternatives']) > 0) {
+    if (isset($postData['args']['bearings']) && strlen($postData['args']['bearings']) > 0) {
         $params['bearings'] = $postData['args']['bearings'];
     }
-    if (isset($postData['args']['annotations']) && strlen($postData['args']['alternatives']) > 0 ) {
+    if (isset($postData['args']['annotations']) && strlen($postData['args']['annotations']) > 0 ) {
         $params['annotations'] = $postData['args']['annotations'];
     }
 
@@ -54,12 +54,9 @@ $app->post('/api/MapboxDirection/getOptimalDriving', function ($request, $respon
             'query' => $params
         ]);
         $vendorResponseBody = $vendorResponse->getBody()->getContents();
-        $rawBody = json_decode($vendorResponse->getBody());
-        $error = $rawBody->responses[0]->error;
-        $all_data[] = $rawBody;
-        if ($vendorResponse->getStatusCode() == '200' && !isset($error)) {
+        if ($vendorResponse->getStatusCode() == '200') {
             $result['callback'] = 'success';
-            $result['contextWrites']['to'] = is_array($all_data) ? $all_data : json_decode($all_data);
+            $result['contextWrites']['to'] = json_decode($vendorResponse->getBody());
         } else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
@@ -68,7 +65,8 @@ $app->post('/api/MapboxDirection/getOptimalDriving', function ($request, $respon
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
         $vendorResponseBody = $exception->getResponse()->getBody();
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = json_decode($vendorResponseBody);
+        $result['contextWrites']['to']['status_code'] = 'API_ERROR';
+        $result['contextWrites']['to']['status_msg'] = json_decode($vendorResponseBody);
     }
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
