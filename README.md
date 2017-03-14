@@ -1,7 +1,7 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/MapboxDirection/functions?utm_source=RapidAPIGitHub_MapboxDirectionFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 # MapboxDirection Package
 Make maps, direction, geocoding, transit
-* Domain: mapbox.com
+* Domain: https://www.mapbox.com
 * Credentials: accessToken
 
 ## How to get credentials: 
