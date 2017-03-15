@@ -1,12 +1,12 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/MapboxDirection/functions?utm_source=RapidAPIGitHub_MapboxDirectionFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 # MapboxDirection Package
 Make maps, direction, geocoding, transit
-* Domain: https://www.mapbox.com
+* Domain: [Mapbox](https://www.mapbox.com)
 * Credentials: accessToken
 
 ## How to get credentials: 
-1. You can get your accessToken from your account (https://www.mapbox.com/studio/account/tokens/)
- 
+1. You can get your accessToken from your account ([Mapbox Account](https://www.mapbox.com/studio/account/tokens/))
+
 ## MapboxDirection.getOptimalDriving
 For automotive routing. This profile shows the fastest routes by preferring high-speed roads, like highways.
 
