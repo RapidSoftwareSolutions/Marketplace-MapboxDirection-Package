@@ -6,7 +6,7 @@
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-MapboxDirection-Package",
   "keywords": ["map","direction","route", "area", "coordinates"],
   "accounts": {
-    "domain": "mapbox.com",
+    "domain": "https://mapbox.com",
     "credentials": [
       "accessToken"
     ]
