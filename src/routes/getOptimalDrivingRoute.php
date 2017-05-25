@@ -14,11 +14,16 @@ $app->post('/api/MapboxDirection/getOptimalDriving', function ($request, $respon
     }
 
     $url = $settings['apiUrl'] . "/mapbox/driving/";
-    $coordinateArray = [];
-    foreach ($postData['args']['coordinates'] as $coordinate) {
-        $coordinateArray[] = $coordinate['lng'] . ',' . $coordinate['lat'];
+    if (is_array($postData['args']['coordinates'])) {
+        $url .= str_replace(" ", "", implode(';', $postData['args']['coordinates']));
     }
-    $url .= implode(';', $coordinateArray);
+    else {
+        $coordinateArray = [];
+        foreach ($postData['args']['coordinates'] as $coordinate) {
+            $coordinateArray[] = $coordinate['lng'] . ';' . $coordinate['lat'];
+        }
+        $url .= implode(';', $coordinateArray);
+    }
 
     $params['access_token'] = $postData['args']['accessToken'];
 

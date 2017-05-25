@@ -13,7 +13,7 @@ For automotive routing. This profile shows the fastest routes by preferring high
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
@@ -29,7 +29,7 @@ Detects broad sets of categories within an image, ranging from modes of transpor
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
@@ -45,7 +45,7 @@ Detects popular natural and man-made structures within an image.
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
@@ -61,7 +61,7 @@ Performs Optical Character Recognition. It detects and extracts text within an i
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like {'lng':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
 | geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
 | overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
@@ -77,13 +77,10 @@ MapboxDirection.getOptimalDriving
 ```code
 {
 	"accessToken": "Your-accessToken-here",
-	"coordinates": [{
-		"lng": "-122.42",
-		"lat": "37.78"
-	}, {
-		"lng": "-77.03",
-		"lat": "38.91"
-	}]
+	"coordinates": [
+		"-122.42,37.78", 
+		"-77.03,38.91"
+		]
 }
 ```
 #### Response

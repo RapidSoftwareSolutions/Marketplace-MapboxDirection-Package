@@ -25,8 +25,13 @@
         {
           "name": "coordinates",
           "type": "Array",
-          "info": "List of points coordinates to visit like {'long':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.",
-          "required": true
+          "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
+          "required": true,
+          "structure": {
+            "name": "coordinate",
+            "type": "Map",
+            "info": "Coordinate"
+          }
         },
         {
           "name": "alternatives",
@@ -36,13 +41,15 @@
         },
         {
           "name": "geometries",
-          "type": "String",
+          "type": "Select",
+          "options": ["geojson", "polyline","polyline6"],
           "info": "Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .",
           "required": false
         },
         {
           "name": "overview",
-          "type": "String",
+          "type": "Select",
+          "options": ["full", "simplified", "false"],
           "info": "Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified",
           "required": false
         },
@@ -101,24 +108,31 @@
         {
           "name": "coordinates",
           "type": "Array",
-          "info": "List of points coordinates to visit like {'long':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.",
-          "required": true
+          "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
+          "required": true,
+          "structure": {
+            "name": "coordinate",
+            "type": "Map",
+            "info": "Coordinate"
+          }
         },
         {
           "name": "alternatives",
           "type": "Boolean",
-          "info": "Whether to return alternative routes. Can be  true or false (default)",
+          "info": "Whether to return alternative routes. Can be true or false (default)",
           "required": false
         },
         {
           "name": "geometries",
-          "type": "String",
+          "type": "Select",
+          "options": ["geojson", "polyline", "polyline6"],
           "info": "Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .",
           "required": false
         },
         {
           "name": "overview",
-          "type": "String",
+          "type": "Select",
+          "options": ["full", "simplified", "false"],
           "info": "Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified",
           "required": false
         },
@@ -177,8 +191,13 @@
         {
           "name": "coordinates",
           "type": "Array",
-          "info": "List of points coordinates to visit like {'long':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.",
-          "required": true
+          "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
+          "required": true,
+          "structure": {
+            "name": "coordinate",
+            "type": "Map",
+            "info": "Coordinate"
+          }
         },
         {
           "name": "alternatives",
@@ -188,13 +207,15 @@
         },
         {
           "name": "geometries",
-          "type": "String",
+          "type": "Select",
+          "options": ["geojson", "polyline", "polyline6"],
           "info": "Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .",
           "required": false
         },
         {
           "name": "overview",
-          "type": "String",
+          "type": "Select",
+          "options": ["full", "simplified", "false"],
           "info": "Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified",
           "required": false
         },
@@ -253,8 +274,13 @@
         {
           "name": "coordinates",
           "type": "Array",
-          "info": "List of points coordinates to visit like {'long':'value1','lat':'value2'}. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.",
-          "required": true
+          "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
+          "required": true,
+          "structure": {
+            "name": "coordinate",
+            "type": "Map",
+            "info": "Coordinate"
+          }
         },
         {
           "name": "alternatives",
@@ -264,13 +290,15 @@
         },
         {
           "name": "geometries",
-          "type": "String",
+          "type": "Select",
+          "options": ["geojson", "polyline", "polyline6"],
           "info": "Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .",
           "required": false
         },
         {
           "name": "overview",
-          "type": "String",
+          "type": "Select",
+          "options": ["full", "simplified", "false"],
           "info": "Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified",
           "required": false
         },
