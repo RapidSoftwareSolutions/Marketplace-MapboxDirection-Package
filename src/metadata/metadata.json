@@ -24,7 +24,7 @@
         },
         {
           "name": "coordinates",
-          "type": "Array",
+          "type": "List",
           "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
           "required": true,
           "structure": {
@@ -107,7 +107,7 @@
         },
         {
           "name": "coordinates",
-          "type": "Array",
+          "type": "List",
           "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
           "required": true,
           "structure": {
@@ -190,7 +190,7 @@
         },
         {
           "name": "coordinates",
-          "type": "Array",
+          "type": "List",
           "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
           "required": true,
           "structure": {
@@ -273,7 +273,7 @@
         },
         {
           "name": "coordinates",
-          "type": "Array",
+          "type": "List",
           "info": "Minimum 2 pairs of coordinates. Maximum 25 pairs.",
           "required": true,
           "structure": {
