@@ -7,16 +7,26 @@ Make maps, direction, geocoding, transit
 ## How to get credentials: 
 1. You can get your accessToken from your account ([Mapbox Account](https://www.mapbox.com/studio/account/tokens/))
 
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
 ## MapboxDirection.getOptimalDriving
 For automotive routing. This profile shows the fastest routes by preferring high-speed roads, like highways.
 
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | List       | List of Maps (coordinates) to visit. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
-| geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
-| overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
+| geometries      | Select     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
+| overview        | Select     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
 | steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
 | continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
@@ -29,10 +39,10 @@ Detects broad sets of categories within an image, ranging from modes of transpor
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | List       | List of Maps (coordinates) to visit. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
-| geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
-| overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
+| geometries      | Select     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
+| overview        | Select     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
 | steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
 | continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
@@ -45,10 +55,10 @@ Detects popular natural and man-made structures within an image.
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | List       | List of Maps (coordinates). At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
-| geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
-| overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
+| geometries      | Select     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
+| overview        | Select     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
 | steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
 | continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
@@ -61,10 +71,10 @@ Performs Optical Character Recognition. It detects and extracts text within an i
 | Field           | Type       | Description
 |-----------------|------------|----------
 | accessToken     | credentials| The api key obtained from Mapbox
-| coordinates     | Array      | List of points coordinates to visit like ['lng1,lat1', 'lng2,lat2']. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
+| coordinates     | List       | List of Maps (coordinates) to visit. At least two pairs of coordinates (starting point and the end point of the route). Maximum 25 pairs.
 | alternatives    | Boolean    | Whether to return alternative routes. Can be  true or false (default)
-| geometries      | String     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
-| overview        | String     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
+| geometries      | Select     | Format of the returned geometry. Allowed values are: geojson, polyline (with precision 5), polyline6 (with precision 6). The default value is polyline .
+| overview        | Select     | Type of returned overview geometry. Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or false (no overview geometry). The default is simplified
 | radiuses        | String     | Maximum distance in meters that each coordinate is allowed to move when snapped to a nearby road segment. There must be as many radiuses as there are coordinates in the request, each separated by  ; . Values can be any number greater than 0 or they can be the string  unlimited. If no routable road is found within the radius, a NoSegment error is returned.
 | steps           | Boolean    | Whether to return steps and turn-by-turn instructions. Can be true or false. The default is false.
 | continueStraight| Boolean    | Sets allowed direction of travel when departing intermediate waypoints. If true the route will continue in the same direction of travel. If false the route may continue in the opposite direction of travel. Defaults to true for getOptimalDriving/getOptimalDrivingTraffic and false for getOptimalCycling and getOptimalWalking.
